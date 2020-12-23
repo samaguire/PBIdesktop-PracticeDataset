@@ -23,10 +23,10 @@ param (
 
 $pbitNotExist = -not (Test-Path -Path "$env:TEMP\$baseName.pbit" -PathType Leaf)
 $xlsxNotExist = -not (Test-Path -Path "$env:TEMP\$baseName.xlsx" -PathType Leaf)
-$txtNotExist = -not (Test-Path -Path "$env:TEMP\$baseName.txt" -PathType Leaf)
-$versionOld = $version -gt (Get-Content -Encoding UTF8 -Path "$env:TEMP\$baseName.txt" -ErrorAction SilentlyContinue)
+$verNotExist = -not (Test-Path -Path "$env:TEMP\$baseName.ver" -PathType Leaf)
+$versionOld = $version -gt (Get-Content -Encoding UTF8 -Path "$env:TEMP\$baseName.ver" -ErrorAction SilentlyContinue)
 
-if ( $pbitNotExist -or $xlsxNotExist -or $txtNotExist -or $versionOld ) {
+if ( $pbitNotExist -or $xlsxNotExist -or $verNotExist -or $versionOld ) {
 
     Add-Type -Assembly 'System.IO.Compression.FileSystem'
 
@@ -59,7 +59,7 @@ if ( $pbitNotExist -or $xlsxNotExist -or $txtNotExist -or $versionOld ) {
 
     # :: save version file
 
-    Set-Content -Encoding UTF8 -Path "$env:TEMP\$baseName.txt" -Value $version
+    Set-Content -Encoding UTF8 -Path "$env:TEMP\$baseName.ver" -Value $version
 
 }    
 

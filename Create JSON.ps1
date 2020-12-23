@@ -3,7 +3,7 @@ $basePath = Split-Path -parent $PSCommandPath
 
 # :: set bulk of json values
 
-$version = "2.3.4"
+$version = "2.3.5"
 $name = "Practice Dataset"
 $description = "Practice Dataset"
 $path = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
