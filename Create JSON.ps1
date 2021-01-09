@@ -38,7 +38,6 @@ $ps1 = {
     
         # Download latest version
         $file = "$env:TEMP\$baseName.zip"
-        If (Test-Path $file) { Remove-Item $file }
         Invoke-WebRequest $zipurl -Out $file
     
         # Extract latest version
