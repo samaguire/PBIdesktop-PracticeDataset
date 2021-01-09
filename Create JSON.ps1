@@ -76,7 +76,8 @@ $ps1String = $ps1.ToString().Replace('$baseName', $baseName).Replace('$version',
 $ps1Base64 = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($ps1String))
 $command = { Invoke-Command -ScriptBlock ([Scriptblock]::Create([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($ps1Base64)))) -ArgumentList @('%server%', '%database%') }
 $commandString = $command.ToString().Replace('$ps1Base64', "'$ps1Base64'")
-$arguments = "-WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command &{$commandString}"
+# $arguments = "-WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command &{$commandString}"
+$arguments = "-NoProfile -ExecutionPolicy Bypass -Command &{$commandString}"
 
 # Get json value for iconData
 $imageType = "png"
