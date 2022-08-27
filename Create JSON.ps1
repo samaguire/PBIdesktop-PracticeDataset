@@ -1,7 +1,7 @@
 $baseName = "practicedataset"
 
 # Set bulk of json values
-$version = "3.0.1"
+$version = "3.1.0"
 $name = "Practice Dataset"
 $description = "Practice Dataset"
 $path = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
